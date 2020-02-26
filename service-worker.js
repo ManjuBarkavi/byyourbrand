@@ -81,16 +81,17 @@ self.addEventListener('fetch', (evt) => {
                 return cache.match(evt.request);
               });
         }));
-        evt.respondWith(
-          caches.open(CACHE_NAME).then((cache) => {
-            return cache.match(evt.request)
-                .then((response) => {
-                  return response || fetch(evt.request);
-                });
-          })
-      );
     return;
   }
+
+  evt.respondWith(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.match(evt.request)
+          .then((response) => {
+            return response || fetch(evt.request);
+          });
+    })
+);
   
   // if (evt.request.mode !== 'navigate') {
   //   // Not a page navigation, bail.
