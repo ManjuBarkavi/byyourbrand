@@ -295,9 +295,9 @@
         <input type="submit" value="ADD TO CART" disabled
             class="mdl-button mdl-button--raised mdl-button--accent"
             [disabled]="!selectedSize || !shirts[selected.sku].sizes[selectedSize]">
-
             <iframe src="https://kd1.setmore.com" scrolling="yes" width="585" height="680" frameborder="1"></iframe>
-      </div>
+            <iframe loading="lazy" class="setmore-iframe lazyloaded" src="https://kd1.setmore.com?lang=french" width="585" height="680" frameborder="0" data-rocket-lazyload="fitvidscompatible" data-lazy-src="https://kd1.setmore.com?lang=french" data-was-processed="true"></iframe>
+          </div>
 
       <div submit-success>
         <template type="amp-mustache">Added {{quantity}} shirt(s) to cart!</template>
